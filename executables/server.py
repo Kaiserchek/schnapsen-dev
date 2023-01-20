@@ -23,7 +23,7 @@ def main(bot: str) -> None:
         else:
             raise NotImplementedError
         bot2 = s.make_gui_bot(name="mybot2")
-        # bot1 = s.make_gui_bot(name="mybot1")
+#        bot1 = s.make_gui_bot(name="mybot1")
         engine.play_game(bot1, bot2, random.Random(100))
 
 

@@ -1,5 +1,5 @@
 from unittest import TestCase
-from schnapsen.bots import RandBot, AlphaBetaBot
+from schnapsen.bots import RandBot, AlphaBetaBot, BullyBot
 from schnapsen.game import SchnapsenGamePlayEngine
 import random
 
@@ -24,3 +24,14 @@ class AlphaBetaBotTest(TestCase):
     def test_run(self) -> None:
         # TODO
         pass
+
+
+class BullyBotTest(TestCase):
+    def setUp(self) -> None:
+        self.engine = SchnapsenGamePlayEngine()
+        self.bot1 = BullyBot(random.Random())
+        self.bot2 = RandBot(43)
+
+    def test_run(self) -> None:
+        for i in range(100):
+            self.engine.play_game(self.bot1, self.bot2, random.Random(i))

@@ -22,7 +22,7 @@ class RdeepBot(Bot):
         # get the list of valid moves, and shuffle it such
         # that we get a random move of the highest scoring
         # ones if there are multiple highest scoring moves.
-        moves = state.valid_moves()
+        moves: list[Move] = state.valid_moves()
         self.__rand.shuffle(moves)
 
         best_score = float('-inf')
